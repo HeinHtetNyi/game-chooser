@@ -1,10 +1,10 @@
-import Like from './components/Like'
+import MyForm from './components/MyForm'
 
 function App() {
 
   return (
     <>
-      <Like onClick={() => console.log("clicked like")} />
+      <MyForm/>
     </>
   )
 }
