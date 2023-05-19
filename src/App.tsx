@@ -1,10 +1,11 @@
-import MyForm from './components/MyForm'
+import Items from "./pages/Items/Items"
+import './App.css'
 
 function App() {
 
   return (
     <>
-      <MyForm/>
+      <Items/>
     </>
   )
 }
