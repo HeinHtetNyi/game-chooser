@@ -26,6 +26,7 @@ const Items: React.FunctionComponent<ItemsProps> = () => {
     const { register, handleSubmit, formState: { errors } } = useForm<ItemInputs>({
         resolver: joiResolver(schema)
     });
+    
     const onSubmit: SubmitHandler<ItemInputs> = data => {
         setItemList([...itemList, data])
         console.log(data)

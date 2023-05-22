@@ -24,13 +24,13 @@ const schema = Joi.object({
 const ExpenseForm: FunctionComponent<ExpenseFormProps> = ({
     onSubmit
 }) => {
-    const { register, handleSubmit, formState: { errors } } = useForm<ExpenseInputs>({
+    const { register, handleSubmit, reset, formState: { errors } } = useForm<ExpenseInputs>({
         resolver: joiResolver(schema)
     })
     // const onSubmit: SubmitHandler<ExpenseInputs> = data => console.log(data)
 
     return (  
-        <form onSubmit={handleSubmit((data) => onSubmit(data))}>
+        <form onSubmit={handleSubmit((data) => {onSubmit(data); reset()})}>
             <div className='mb-2'>
                 <label htmlFor='description' className='form-label'>Description</label>
                 <input {...register("description")} type="text" id="description" className='form-control' placeholder='description' />
